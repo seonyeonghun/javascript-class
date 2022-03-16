@@ -4,7 +4,7 @@
 # table of class
 - 변수(variables) : clear
 - 연산자(operators) : clear
-- 제어문(control statement) : ~ing
+- 제어문(control statement) : if, if~else -ing
 
 # mission
 - p.58 Mission I, II : finished
