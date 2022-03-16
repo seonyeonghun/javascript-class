@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 조건문</title>
+</head>
+<body>
+    <h1>제어문</h1>
+    <h2>조건문</h2>
+    <h3>if ~ else</h3>
+    <p>단순 if는 조건식이 true 일때만 실행되지만, if ~ else는 true일때와 false일때
+        실행하는 구문이 각각 존재함.
+    </p>
+    <code>
+        <pre>
+            if(조건식) {
+                ..true일때 실행코드..;
+            } else {
+                ..false일때 실행코드..;
+            }
+        </pre>
+    </code>
+    <h4>if ~ else 코딩해보세요(p.65)</h4>
+    <script>
+        var likeNum = prompt("좋아하는 숫자를 하나 입력하세요");
+        if(likeNum % 2 == 0) {
+            // 2로 나눈 나머지가 0 --> 짝수!
+            document.write("입력한 숫자값 "+likeNum+"은, 짝수 입니다.", "<br>");
+        } else { // 아니면~ 으로 해석!
+            // 2로 나눈 나머지 1 --> 홀수
+            document.write("입력한 숫자값 "+likeNum+"은, 홀수 입니다.", "<br>");
+        }
+    </script>
+</body>
+</html>
