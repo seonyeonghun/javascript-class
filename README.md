@@ -7,4 +7,4 @@
 - 제어문(control statement) : ~ing
 
 # mission
-- p.58 Mission I, II
+- p.58 Mission I, II : finished
