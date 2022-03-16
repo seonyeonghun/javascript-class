@@ -1,0 +1,7 @@
+# push 안할 폴더의 목록
+figma-sketch/
+
+
+# push 안할 파일 목록
+*.psd
+*.fig
