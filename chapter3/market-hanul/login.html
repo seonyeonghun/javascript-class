@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓한울</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/market-hanul.css">
+</head>
+<body>
+    <h1 class="d-none">마켓한울 로그인</h1>
+    <header>
+        <div class="header-wrap">
+            <div class="header-top">
+                <ul class="top-links">
+                    <li><a href="#">처음으로</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+            <div class="logo">마켓한울</div>
+            <nav class="main-nav">
+                <ul id="gnb">
+                    <li><a href="#">최저가상품</a></li>
+                    <li><a href="#">인기상품</a></li>
+                    <li><a href="#">신선식품</a></li>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <img src="https://picsum.photos/2920/300" alt="오늘 장보기, 마켓한울에서">
+    </div>
+    <!-- 오늘의 실습. 중첩 if 연습 -->
+    <section id="main">
+        <div class="main-wrap">
+            <h2>회원 로그인</h2>
+            <div class="banner-form">
+                <div class="banner">
+                    <img src="https://picsum.photos/1200/400" alt="placeholder">
+                </div>
+                <div class="form">
+                    <form id="login-form" autocomplete="off">
+                        <ul>
+                            <li>
+                                <label for="user_id">아이디</label>
+                                <input type="text" required id="user_id" placeholder="사용자명이나 이메일 주소">
+                            </li>
+                            <li>
+                                <label for="user_pw">비밀번호</label>
+                                <input type="password" required id="user_pw" placeholder="기호,영어,숫자 7자 이상">
+                            </li>
+                            <li>
+                                <input type="submit" value="로그인" id="go_login">
+                            </li>
+                            <li>
+                                <a href="#">아이디/비밀번호 찾기</a><!-- 새창 또는 새 페이지 연결-->
+                                <a href="#">도움이 필요하신가요?</a><!--고객센터 연결-->
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 오늘의 실습. 중첩 if 연습 끝-->
+    <footer>
+        <div class="logo2">로고이미지</div>
+        <address>사이트 정보, 저작권 표시, 전화번호, 사업자번호 등등등</address>
+    </footer>
+    <script src="script/market-hanul.js"></script>
+</body>
+</html>

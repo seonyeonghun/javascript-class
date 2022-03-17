@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+body {
+    font: 16px/1.5 "Nanum Gothic", sans-serif;
+    color: #333;
+}
+
+.d-none {
+    display: none;
+}
+
+a, a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none; /* 목록 기호 없앰 */
+}
+
+/* ================= header ================== */
+.header-wrap {
+    max-width: 1190px;
+    margin: 0 auto;
+}
+.top-links {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+.top-links li {
+    margin-left: 10px;
+}
+#gnb {
+    display: flex;
+    justify-content: center;
+}
+#gnb li {
+    margin: 0 5px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* =================== hero ==================== */
+.hero {
+    overflow: hidden;
+}
+.hero img {
+    /* max-width: 100%; */
+    object-fit: cover;
+}
+
+
+/* =================== #main ==================== */
+.main-wrap {
+    max-width: 1190px; /* 최대 1190px, 1190미만 화면에서는 100%로 적용 */
+    margin: 0 auto;
+}
+.main-wrap h2 {
+    text-align: center;
+    font-size: 1.250rem;
+    font-weight: bolder;
+    margin: 2rem 0;
+}
+
+.banner-form {
+   display: flex;
+}
+.banner {
+    width: 40%;
+}
+.banner img{
+    max-width: 100%;
+}
+.form {
+    width: 60%;
+}
+.form label {
+    display: inline-block;
+    width: 150px;
+}
+.form li {
+    margin: 10px 0;
+}
+#user_id {
+    width: calc(100% - 180px);
+    padding: 10px 0;
+}
+#user_pw {
+    width: calc(100% - 180px);
+    padding: 10px 0;
+}
+#go_login {
+    background: black;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    margin: 0 20px 0 0
+}
+#login-form li:nth-child(3){
+    display: flex;
+    justify-content: flex-end
+}
+#login-form li:nth-last-child(1){
+    font-size: 12px;
+}
