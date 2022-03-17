@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 조건문</title>
+</head>
+<body>
+    <h1>중첩 if</h1>
+    <p>if 구문 안에 또 if구문을 작성하는 규칙, 너무 많이 중첩(=nested)
+        하게 될 경우 복잡한 코드로 오류나 실수를 범할 수 있음
+    </p>
+    <code>
+        <pre>
+            if(조건식1) {
+                if(다른 조건식2) {
+                    코드
+                } 
+            }
+        </pre>
+    </code>
+    <h2>중첩 if 예시</h2>
+    <p>질의 응답창을 이용해 로그인(id/pw) 하는 프로그램을 작성할것</p>
+    <p>미리 정해진 id/pw와 사용자가 입력한 id/pw를 비교해서,
+        id가 일치하면, pw를 비교해서 그것마저 일치했을때 로그인 성공하고,
+        id가 일치하나, pw를 비교해서 일치하지 않다면 로그인 실패 또는
+        id마저 미리 정해진 id와 다르다면, 그냥 실패! (pw가 맞더라도..)
+    </p>
+    <p>로그인 프로그램은 사용자가 입력한 정보(id/pw)와 회원정보(기존에 결정한)
+        의 일치유무에 따라 성공, 실패에 따른 화면(view)를 제공하는 것
+    </p>
+    <script>
+        // 미리 정해둔 정보 easy1004 / 112233
+        // admin, super : 관리자 계정 의미 (보안상 사용x 좋다!)
+        var admin_id = "easy1004", admin_pw = "112233";
+
+        var user_id = prompt("아이디를 입력하세요");
+        var user_pw = prompt("비밀번호를 입력하세요");
+
+        if(admin_id === user_id) {
+            if(admin_pw === user_pw) {
+                alert("관리자님, 로그인을 환영합니다.\n첫페이지로 이동합니다.")
+                location.href="https://naver.com"; // 네이버화면을 첫화면이라고 가정하고~
+            } else {
+                alert("아이디 또는 비밀번호를 확인후 다시 시도하세요!")                
+            }
+        } else {
+            alert("아이디 또는 비밀번호를 확인후 다시 시도하세요!")                
+        }
+    </script>
+</body>
+</html>
