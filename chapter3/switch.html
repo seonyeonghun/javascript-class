@@ -37,24 +37,34 @@
         // switch~case : case가 정해져있을때!! 
         // .toLowerCase() : 문자를 소문자로 (한글?x 영어만!)
         var likeSite = prompt("즐겨찾는 포털사이트 이름은?","예)네이버,다음,구글중 입력");
-        if(likeSite.toLocaleLowerCase() === "naver") {
-            likeSite = "네이버"
-        } else if(likeSite.toLocaleLowerCase() === "daum") {
-            likeSite = "다음"
-        } else if(likeSite.toLocaleLowerCase() === "google") {
-            likeSite = "구글";
-        } 
+        // if(likeSite.toLocaleLowerCase() === "naver") {
+        //     likeSite = "네이버"
+        // } else if(likeSite.toLocaleLowerCase() === "daum") {
+        //     likeSite = "다음"
+        // } else if(likeSite.toLocaleLowerCase() === "google") {
+        //     likeSite = "구글";
+        // } 
         console.log(likeSite);
         var targetURL;
-        switch(likeSite) {
-            case "네이버":targetURL="naver.com";
-            break;
-            case "다음":targetURL="daum.net";
-            break;
-            case "구글":targetURL="google.com";
-            break;
-            default:alert("네이버, 다음, 구글중에서만 입력하세요!")
+        if(likeSite === "네이버" || likeSite.toLocaleLowerCase() === "naver") {
+            targetURL = "naver.com"
+        } else if(likeSite === "다음" || likeSite.toLocaleLowerCase() === "daum") {
+            targetURL = "daum.net"
+        } else if(likeSite === "구글" || likeSite.toLocaleLowerCase() === "google") {
+            targetURL = "daum.net"
+        } else {
+            alert("네이버, 다음, 구글 중 하나를 입력해야합니다.");
+            location.reload();
         }
+        // switch(likeSite) {
+        //     case "네이버":targetURL="naver.com";
+        //     break;
+        //     case "다음":targetURL="daum.net";
+        //     break;
+        //     case "구글":targetURL="google.com";
+        //     break;
+        //     default:alert("네이버, 다음, 구글중에서만 입력하세요!")
+        // }
         if(targetURL){
             location.href="http://"+targetURL;
         }
