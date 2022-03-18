@@ -1,6 +1,6 @@
 # push 안할 폴더의 목록
 figma-sketch/
-
+.vscode/
 
 # push 안할 파일 목록
 *.psd
