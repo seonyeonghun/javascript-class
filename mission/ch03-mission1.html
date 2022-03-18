@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도전 MISSION</title>
+</head>
+<body>
+    <h1>3장. 제어문 도전Mission</h1>
+    <p>while 반복문을 이용하여, 구구단중 5단을 출력하세요</p>
+    <script>
+        /* 반복되는거 ==> 반복문, 변하는 ==> 변수, 연산결과
+        5 x 1 = 5
+        5 x 2 = 10
+        5 x 3 = 15
+        5 x 4 = 20
+        5 x 5 = 25
+        5 x 6 = 30
+        5 x 7 = 35
+        5 x 8 = 40
+        5 x 9 = 45
+        */
+       var dan = prompt("알고싶은 단 수는?")
+       var limit = prompt("얼마까지 알고싶으세요?","예)100단이면 100입력")
+       var i = 1; // 반복 변수
+       var total = 0;
+        while(i <= limit) {
+            document.write(dan+" x "+i+" = "+(dan * i), "<br>");
+            total += dan * i;
+            i++;
+        }
+        document.write("================= END =================", "<br>");
+        document.write("합계 : "+total, "<br>");
+    </script>
+</body>
+</html>

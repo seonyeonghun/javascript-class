@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도전 MISSION</title>
+    <style>
+        table, td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>3장. 제어문 도전Mission</h1>
+    <p>5행 5열의 표를 만들고, 데이터가 1부터 25까지 출력되도록 작성</p>
+    <p>중첩 for문에 대해서 알아야 더 쉽게 해결됩니다.</p>
+    <script>
+        // 단순for vs 중첩for : for문을 한번만 vs for문 안에 for문\
+        // p.82 중첩for문 형식
+        /* 2,3단 반복정도
+            for(초깃값;조건식;증감식){
+                for(초깃값;조건식;증감식){
+                    for(초깃값;조건식;증감식){
+                        실행코드
+                    }
+                }
+            }
+        */
+       // p.82 코딩해보세요!
+    //    for(var i=1; i<= 5; i++) {
+    //        for(var j=1; j<=5; j++) {
+    //            document.write(i+"행, "+j+"열", "<br>");
+    //        }           
+    //    }
+       
+    // p.84 중첩 for문 미션
+    // 5행 5열, 데이터가 1~25가 출력되도록
+    var num = 1;
+    var t = "<table border=\"1\">";
+    for(var i=1; i<=5; i++){
+        t+= "<tr>";
+        for(var j=1; j<=5; j++) {
+            t += "<td>"+num+"</td>";
+            num++;
+        }
+        t += "</tr>"
+    }        
+        // 문제해결을 위한 과정...
+        
+    t += "</table>";
+    document.write(t, "<br>"); // 화면에 출력(body)
+    console.log(t); // 콘솔 tab에 보여짐
+    </script>
+</body>
+</html>
