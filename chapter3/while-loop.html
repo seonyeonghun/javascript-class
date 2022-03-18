@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 반복문</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문</h1>
+    <p>코드를 원하는 횟수만큼 반복하여 실행할 수 있는 구문을 반복문이라고 한다.</p>
+    <p>예를들면, "안녕하세요"를 10번 출력하려면, 지금은 document.write()를 10번 
+        작성한 뒤 실행해야 하는데 하지만, 반복문을 사용하면 10회를 지정해서 
+        document.write() 구문을 1번만 작성하면 10회 출력됩니다.
+    </p>
+    <h2>반복문 종류</h2>
+    <ul>
+        <li>while반복문 : 가장 간단, 반드시 변수를 먼저 선언해야 함.</li>
+        <li>do~while반복문 : 거의 안쓰지만, 조건식이 거짓이어도 1번은 무조건 실행됨</li>
+        <li>for반복문(for~of, for~in) : 반복문이라면 보통 for문을 이야기 할 정도?!</li>
+    </ul>
+    <h3>while반복문</h3>
+    <p>가장 간단하고 사용이 쉽습니다만, 자칫 무한반복에 빠질수 있습니다. 그만큼 주의를
+        요하는 반복문!
+    </p>
+    <h4>while 반복문 예시</h4>
+    <script>
+        // Q.안녕하세요 10번 출력해보세요! (반복문 모를때, CTRL+C,V를 활용!)
+        
+        // Q. 1~100의 합을 구해서 반복문 종료 후 출력해보세요!
+        /*
+        var i=1; // 변수명은 보통 길게~의미를 알수있게? 근데, 반복변수는 짧게..
+        var total=0; // 반복문을 통해 i가 변경되는 값을 대입
+        while(i <= 1000){
+            document.write(i, "<br>");
+            total += i; // total = total + i;
+            i++ // 1.단독사용 2.대입연산자랑 쓸때(위치가 중요!)
+        }
+        document.write("1~100의 합 : "+total, "<br>");
+        */
+
+    // 1~30 까지 숫자중 2의 배수 이면서(AND) 6의배수면 출력
+
+    // var i = 1;
+    // while(i <= 30) {
+    //     if(i % 2 == 0 && i % 6 == 0) {
+    //         document.write(i, "<br>");
+    //     }
+    //     i++;
+    // }
+
+    // 1~30까지 : 증가 방향(++), 20~10 : 감소 방향(--)
+    // 20부터 10까지, 짝수일 경우 : 파랑, 홀수일 경우 : 빨강
+    // true, false일때 각각 실행하는 구문 : if~else
+    /*
+    var j = 20;
+    while(j >= 10){
+        if(j % 2 == 0) { // 2로 나눈 나머지 0 ==> 짝수, 1 ==> 홀수
+            document.write("<p class=\"blue\">"+j+"</p>");
+        } else {
+            document.write("<p class=\"red\">"+j+"</p>");
+        }
+        j--;
+    }
+    */
+    </script>
+    <h3>do~while반복문</h3>
+    <p>while 반복문은 조건식을 비교해서 반복을 수행하지만, do~while반복문은 조건식이
+        나중에 위치해서 조건식이 거짓이라 하더라도 한번은 실행되는 반복문
+    </p>
+    <h4>do~while 반복문 예시</h4>
+    <script>
+        var i = 10;
+        do {
+            document.write("hello", "<br>");
+            i++;
+        } while(i < 3)
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 반복문</title>
+    
+    <style>
+        p {
+            font-size: 20px;
+        }
+        .red {
+            color: red;
+        }
+        .lime {
+            color: lime;
+        }
+        .aqua {
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문</h1>
+    <p>가장 자주쓰는 for 반복문, while, do~while문과 문법은 약간 다르지만
+        반복해서 코드를 원하는 횟수만큼 실행하는 구문
+    </p>
+    <p>for, for~of[배열], for~in[객체] 반복문으로 구분할 수 있다.</p>
+    <code>
+        <pre>
+            for(초깃값;조건식;증감식){
+                반복할 코드;
+            }
+        </pre>
+    </code>
+    <h2>for반복문 예시</h2>
+    <script>
+        /*
+        var total = 0;
+        for(var i=1; i<=10; i++){
+            total += i; // total = total + i
+            if(i % 2 == 0) {
+                document.write("<strong>"+i+"</strong>", "<br>");
+            } else {
+                document.write("<em>"+i+"</em>", "<br>");
+            }
+        }
+        document.write("1~10까지 숫자의 합 : "+total, "<br>");
+        */
+
+        // 1부터 100까지 숫자중,
+        // 조건문1,2,3
+        // 5의 배수 : 빨강
+        // 7의 배수 : 초록
+        // 5와 7의 배수(공배수) : 아쿠아
+
+        // 제어문 : 조건문, 선택문, 반복문
+        // 조건문 : 단순if, if~else, if~ else if, 중첩if
+        // 선택문 : switch ~ case
+        // 반복문 : while, do~while, for
+        var i = 1;
+        for(; i<=100; i++) {
+            if(i % 5 == 0 && i % 7 != 0) {
+                document.write("<p class=\"red\">"+i+"</p>");
+            } else if(i % 7 == 0 && i % 5 != 0) {
+                document.write("<p class=\"lime\">"+i+"</p>");
+            } else if(i % 5 == 0 && i % 7 == 0) {
+                document.write("<p class=\"aqua\">"+i+"</p>");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
