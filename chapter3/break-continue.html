@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 반복문</title>
+</head>
+<body>
+    <h1>반복문</h1>
+    <h2>break</h2>
+    <p>while, for문에서 break를 실행하면 조건과 상관없이 강제로,
+        반복문을 종료하는 명령
+    </p>
+    <h2>continue</h2>
+    <p>while, for문에서 continue를 실행하면 continue문 다음에 오는
+        코드를 무시하고 바로 조건식으로 이동해서 반복을 계속 수행
+    </p>
+    <script>
+        // 1~10 반복문으로 출력하되, 6이 되면 break
+        // 1) while로 출력해봅시다.
+        // 2) for로 출력해봅시다.
+        for(var i=1;i<=10;i++){
+            if(i==6) continue;
+            document.write(i, "<br>");
+        }
+    </script>
+</body>
+</html>
