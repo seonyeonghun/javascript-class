@@ -7,6 +7,9 @@
 - 제어문(control statement) : if, if~else, if~ else if, 중첩 if
 - 선택문 : switch~case 
 - 반복문 : while, do~while, for
+- 객체 > 내장객체 > 배열객체 : array, array method, array property
+
 
 # mission
 - p.58 Mission I, II : finished
+- p.84 Mission I, II : finished
