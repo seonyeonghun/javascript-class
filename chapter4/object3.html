@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <p>참조값(reference), 값(value)에 의한 차이 (변수 vs 객체)</p>
+    <p>숫자, 문자, 불린형등은 프리미티브(원시형, premitive) 자료형은
+        객체와 다른점이 있는데 복사할때 차이를 살펴봅시다.
+    </p>
+    <script>
+        // call by value : 값 복사
+        var user = "jack";
+        var he = user; // 복사 - user의 "jack" 이라는 값을 복사
+        console.log("user : "+user);                
+        console.log("he : "+he);
+
+        user = "peter"; // jack --> peter
+        console.log("user : "+user);                
+        console.log("he : "+he);
+
+        // call by reference : 주소값(=메모리에 저장된 값의 주소) 복사
+        console.log("=============구분선===========");
+
+        // I. 객체 정의 방식(사용자 정의 객체)
+        // var vip = new Object();
+        // vip.name = "mr. hong";
+        // vip.age = 60;
+
+        // II. 객체 정의 방식
+        var vip = {
+            name: "mr. hong",
+            born: "gwangju",
+            gender: "female"
+        }
+
+        var guest = vip; // 복사
+
+        console.log("vip --> "+vip.name); // mr.hong
+        console.log("guest --> "+guest.name); // mr.hong
+        
+        vip.name = "mr. park";
+        
+        vip.age = 60; // age 라는 key와 60이라는 데이터를 정의
+
+        vip["nick name"] = "balloon"; // 공백이 있는 key, value 정의
+        /* ↑↑↑↑ 아래와 같은 방식 ↓↓↓↓↓
+        var vip = {
+            name: 'mr. hong',
+            age: 60
+        }
+        */
+
+        // console.log("vip name --> "+vip.name);
+        // console.log("vip age--> "+vip.age);
+        // console.log("vip nickname--> "+vip["nick name"]);
+        // console.log("guest name--> "+guest.name);
+        // console.log("guest age--> "+guest.age);
+        // console.log("guest nickname--> "+guest["nick name"]);
+
+        for(var key in vip) {
+            //console.log(key+" : "+vip[key]); // 일반적인 변수,key
+
+            console.log(`${key} : ${vip[key]}`) // 템플릿 문법
+        }
+
+        // for(var item in guest) {
+        //     console.log(guest[item])
+        // }
+    </script>
+</body>
+</html>
