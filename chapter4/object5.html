@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 &gt; 날짜객체</title>
+</head>
+<body>
+    <h1>특정 날짜를 Date객체를 이용해 설정, 관련 정보 추출</h1>
+    <p>2002년 월드컵 날짜와 관련된 정보를 출력하는 예제</p>
+    <script>
+        // p.93 
+        var today = new Date(); // 객체 생성자 방식
+        // console.log(today);
+        var nowMonth = today.getMonth(), // 0~11 : +1 실제 월
+        nowDate = today.getDate(),
+        nowDay = today.getDay(); // 0~6 : 일 ~ 토
+     
+        /*
+            요일: 0,1,2,3,4,5,6 <--> 요일 : "월","화",..."토" 변경
+            1) if 조건문중 조건이 여러개면 if else if
+            2) switch(case) : 0~6까지 제한된 조건 (범위가 좁다)
+            3) array(배열) : 배열 인덱스값 <---> 요일 : 0,1,2,3,4,5,6
+        */
+
+        document.write(`오늘은 ${nowMonth}월, ${nowDate}일, ${nowDay}요일 이다.`);
+        
+        var worldcup = new Date(2002,4,31),
+        theMonth = worldcup.getMonth(),
+        theDate = worldcup.getDate(),
+        theDay = worldcup.getDay()
+        
+        document.write(`그날은 ${theMonth}월, ${theDate}일, ${theDay}요일 이다.`);
+        
+    </script>
+</body>
+</html>
