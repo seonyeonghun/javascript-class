@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reset css CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <!-- google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- fontAwesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>디데이 계산기</title>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="top-wrap">
+                <h1>디데이 계산기</h1>
+                <ul class="top-links">
+                    <li><a href="#"><i class="fa-solid fa-house"></i>home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-user"></i>join</a></li>
+                    <li><a href="#"><i class="fa-solid fa-screen-users"></i>sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="main">
+        <div class="article-wrap">
+            <article>
+                <h3>여러분의 소중한  약속을,<br>잊지마세요</h3>
+                <p>그날까지 며칠이 남았는지 계산해보세요!</h3></p>
+                <button id="calc">계산해보기 <i class="fa-solid fa-arrow-right"></i></button>
+            </article>
+            <article class="d-none">
+                <form id="ddayForm" autocomplete="off">
+                    <ul class="form-list">
+                        <li>
+                            <label for="user_year">년도</label>
+                            <input type="text" id="user_year" maxlength="4" placeholder="예) 2022">
+                        </li>
+                        <li>
+                            <label for="user_month">월</label>
+                            <input type="text" id="user_month" maxlength="2" required placeholder="예) 3">
+                        </li>
+                        <li>
+                            <label for="user_date">일</label>
+                            <input type="text" id="user_date" maxlength="2" required placeholder="예) 23">
+                        </li>
+                        <li>
+                            <input type="submit" id="dday_calc" value="계산하기">
+                            <input type="reset" id="dday_reset" value="초기화">
+                        </li>
+                    </ul>
+                </form>
+            </article>
+        </div>
+    </section>
+
+    <script src="script/main.js"></script>
+</body>
+</html>

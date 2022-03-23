@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+html {
+    height: 100vh;
+}
+
+body {
+    font: 16px/1.5 "Noto Sans KR", sans-serif;
+    background: url('../images/clock-bg.jpg') no-repeat center / cover;
+}
+
+a, a:link {
+    text-decoration: none;
+    color: inherit
+}
+
+.d-none {
+    display: none;
+}
+/* =========== header ==================== */
+.header-top {
+    color: white;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0; 
+}
+.top-wrap {
+    max-width: 1190px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.top-links {
+    display: flex;
+    column-gap: 15px; /* grid에 적용하는 속성이지만, flex에도 적용 */
+}
+.top-links li {
+    font-size: 14px;
+    text-transform: uppercase
+}
+
+/* =========== section ==================== */
+.article-wrap {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    z-index: 100;
+}
+article h3, article p {
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0,0,0,1)
+}
+article h3 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+}
+article p {
+    margin: 1rem 0;
+    font-style: italic;
+}
+#calc {
+    background: #5262F0;
+    color: white;
+    padding: .750rem 2.750rem;
+    border-radius: .750rem;
+    border: 0;
+}
+
+/* ============ dday form ============ */
+.form-list li {
+    display: flex;
+    align-items: center; /* 주축-교차축 정렬 */
+    margin: 0 0 1rem 0;
+}
+.form-list li label{
+    color: white;
+    display: block;
+    flex: 1; /* 1의 비율 */
+}
+.form-list li input {
+    flex: 9;
+}
+
+.form-list li input::placeholder {
+    color: white;
+}
+#user_year, #user_month, #user_date {
+    color: white;
+    text-indent: 1rem;
+    padding: 1rem 0;
+    background: none;
+    border: 1px solid white;
+}
+
+#dday_calc {
+    background: #5262F0;
+    color: white;
+    padding: 1rem 0;
+    border: 0;
+    border-radius: 10px;
+    flex: 100px;
+}
+#dday_reset {
+    background: black;
+    color: white;
+    border: 0;
+    padding: 1rem 0;
+    border-radius: 10px;
+    flex: 100px;
+}
+.form-list li:nth-last-child(1) {
+    justify-content: center;
+    column-gap: 15px;
+}
