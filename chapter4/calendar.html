@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font: 16px/1.5 "Noto Sans KR", sans-serif;
+            background: url("https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510_960_720.jpg") no-repeat center / cover;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 5rem 0 0 0;
+            font-size: 3rem;
+        }
+        .text-shadow {
+            text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+        }
+        #calendar_text {
+            text-align: center;
+            color: #f1f1f1;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-shadow">calendar</h1>
+    <div id="calendar_text" class="text-shadow">바뀝니다.</div>
+    <script>
+        // var 참조변수명 = 날짜객체 생성자;
+        var myDate = new Date();
+        // console.log(myDate);
+
+        var myYear = myDate.getFullYear();
+        var myMonth = String(myDate.getMonth()+1);
+        myMonth = myMonth.padStart(2, "0");
+        // 만약 2022-03-22 형식으로 월을 두자리수로 만들려면,
+        // 문자열.padStart(자릿수, "문자열") 형식으로 변경해야 함
+
+        var myDay = myDate.getDate()
+
+        // console.log(`${myYear}. ${myMonth}. ${myDay}`);
+
+        // 어디에 출력할건지? document에 있는 id가 calendar_text에
+        // 내부에(inner) 텍스트(text)로 출력
+
+        var $calendar = document.querySelector("#calendar_text");
+        // console.dir($calendar);
+        $calendar.innerText = `${myYear}. ${myMonth}. ${myDay}`;
+    </script>
+</body>
+</html>
