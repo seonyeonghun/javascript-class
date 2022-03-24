@@ -29,6 +29,9 @@ a, a:link {
     display: flex;
     justify-content: space-between;
 }
+.top-wrap h1 {
+    text-transform: capitalize;
+}
 .top-links {
     display: flex;
     column-gap: 15px; /* grid에 적용하는 속성이지만, flex에도 적용 */
@@ -39,7 +42,7 @@ a, a:link {
 }
 
 /* =========== section ==================== */
-.article-wrap {
+.article-wrap, #result_pop {
     width: 400px;
     height: 300px;
     position: absolute;
@@ -47,6 +50,23 @@ a, a:link {
     top: 50%;
     transform:translate(-50%, -50%);
     z-index: 100;
+}
+#result_pop {
+    z-index: 1000;
+    background: white;
+    border-radius: 1rem;
+    text-align: center;
+}
+#result_pop h1 {
+    font-size: 2rem;
+    margin: 2rem 0
+}
+#result_pop p {
+    font-size: 1.250rem;
+    margin: 1rem 0;
+}
+#d_day strong {
+    color: red;
 }
 article h3, article p {
     color: #fff;
@@ -113,4 +133,45 @@ article p {
 .form-list li:nth-last-child(1) {
     justify-content: center;
     column-gap: 15px;
+}
+
+/* ======= 기존 스타일 마지막에 미디어쿼리! (권장) ========== */
+@media screen and (max-width: 480px) { /* 모바일 디바이스 크기 */
+    .top-wrap {
+        max-width: 100%; /* was 1190px */
+        padding: 0 1rem;
+        align-items: center;
+    }
+    .top-wrap h1 {
+        font-size: 3.75rem;
+    }
+    #burger {
+        display: inline-block;
+    }
+    .top-links {
+        display: none;
+    }
+    .article-wrap {
+        max-width: 93.75%;
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .article-wrap {
+        max-width: 93.75%;
+        left: 50%;
+    }
+}
+@media screen and (max-width: 375px){
+    .article-wrap {
+        max-width: 93.75%;
+        left: 50%;
+    }
+}
+@media screen and (max-width: 320px){
+    .article-wrap {
+        max-width: 93.75%;
+        left: 50%;
+    }
 }
