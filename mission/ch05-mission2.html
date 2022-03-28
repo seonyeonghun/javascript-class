@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수, 도전미션!</title>
+</head>
+<body>
+    <h1>Mission2. TestScore 생성자 함수</h1>
+    <p>kimgun, ohgun의 객체를 생성</p>
+    <p>속성으로 이름, 국어점수, 영어점수를 등록</p>
+    <p>getTestInfo(), getAvg()을 등록하세요</p>
+    <script>
+        // 생성자 함수의 이름은 대문자로 시작함
+        // 반드시 new 키워드를 사용할 것
+
+        function TestScore(name, kor, eng){
+            this.userName = name;
+            this.korScore = kor;
+            this.engScore = eng;
+
+            this.getInfo = function(){
+                return `이름 : ${this.userName}, 국어점수 : ${this.korScore}, 영어점수 : ${this.engScore}`;
+            }
+            this.getAvg = function(){
+                return `평균점수 : ${(this.korScore + this.engScore) / 2}`;
+            }
+        }
+        var kimgun = new TestScore("김군",100,90);
+        document.write(kimgun.getInfo(),"<br>");
+        document.write(kimgun.getAvg(),"<br>");
+        
+        var ohgun = new TestScore("오군",90,90);
+        document.write(ohgun.getInfo(),"<br>");
+        document.write(ohgun.getAvg(),"<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수, 도전미션!</title>
+</head>
+<body>
+    <h1>Mission1. 버튼클릭할때마다 배경색 바꾸기</h1>
+    <p>클릭시 chColor 함수를 호출</p>
+    <p>Math.random()와 배열 데이터 갯수(length) 활용</p>
+    <button>배경색 바꾸기</button>
+    <script>
+        // 대상을 찾자!
+        var chBTN = document.querySelector("button");
+        var colors = ["#ff0", "#6c0", "#fcf", "#cf0", "#39f"];
+        var bodyTag = document.querySelector("body");
+        
+        chBTN.addEventListener("click", chColor);
+
+        function chColor(){
+            var ranNum = Math.floor(Math.random()* 5); // 0~4까지
+            //parseInt() : 문자열에서 정수값 ex> 15px -> 15
+            // console.log(ranNum);
+            // console.dir(bodyTag)
+            bodyTag.style.backgroundColor = colors[ranNum];
+        }
+    </script>
+</body>
+</html>
