@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호생성기</title>
+</head>
+<body>
+    <h1>로또번호 생성</h1>
+    <button>색바꾸기</button>
+    <script>
+        // p.131 함수 : 프로그램의 코드를 저장한 공간
+        // 변수 vs 함수 : 데이터를 저장한 공간 vs 코드를 저장한 공간
+        // 1개의 데이터 vs 여러줄의 코드
+        // var vs function : 선언 키워드
+
+        // 객체 내부에 정의된 함수 : 메소드();
+        // 객체 내부에 정의된 변수 : 프로퍼티 (클래스 - 멤버변수)
+
+        // p.135 매개변수가 있는 함수 정의문
+        function multipication(x, y){
+            return x * y;
+        }
+        function plus(){
+            var sum = 0;
+            for(var i=0; i < arguments.length; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        var result = plus(1,2,3,4,5,6,7,8,9,10);
+        document.write("1~10까지 합 : "+result)
+    </script>
+</body>
+</html>

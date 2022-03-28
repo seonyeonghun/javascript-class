@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 스코프의 개념</title>
+</head>
+<body>
+    <h1>함수 스코프(p.144)</h1>
+    <p>스코프는 사전적인 의미가 범위이고, 변수 또는 함수의 유효 범위를 가리킴</p>
+    <h2>스코프 예시</h2>
+    <script>
+        // p.145 
+        // 전역변수, 지역변수 차이
+        // var score = 10;
+        // function myFnc(){
+        //     var score = 50; 
+        //     alert("내부 변수 :"+score)
+        // }
+        // myFnc();
+        // alert("전역 변수: "+score);
+
+        // p.146 전역함수, 지역함수
+        (function myFnc(){
+            alert("전역함수 myFnc가 호출됨")
+        })();
+        function outFunc(){ 
+            function myFnc(){ // 지역함수
+                alert("지역함수 myFnc가 호출됨")
+            }
+            myFnc(); // 지역 함수 myFnc를 호출(=실행)
+        }
+        
+        outFunc();
+        myFnc();
+    </script>
+</body>
+</html>
