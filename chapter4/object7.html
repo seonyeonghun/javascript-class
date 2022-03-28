@@ -31,9 +31,55 @@
         // .console.log()
         // .document.write()
 
-       // 로또 번호 생성기
-        var ranNum = Math.floor(Math.random() * 10);
-        console.log(ranNum);
+        // 로또 번호 생성기
+        // 0~9까지 난수를 생성
+        // var ranNum = Math.floor(Math.random() * 10);
+        
+        // p.97 120~150 사이의 난수를 발생
+        // var ranNum1 = Math.floor(Math.random() * 31);
+        // var ranNum2 = Math.floor(Math.random() * 31)+120;
+        // console.log(ranNum1,ranNum2);
+
+        // 코딩해보세요!
+        // 웹사이트 방문시 창에(?) 방문자가 가위,바위,보 중 하나를
+        // 입력하면 컴퓨터가 랜덤으로 내려는 가위,바위,보와 일치했을때
+        // 맞추는 게임 (컴퓨터가 무엇을 낼지 예측하는 게임)
+        
+        // Math.random()
+
+        document.write("<h1>컴퓨터 가위,바위,보 맞추기</h1>");
+        // scissor, rock, paper game!
+        var game = prompt("가위, 바위, 보 중 하나를 한글로만 입력하세요"); // .confirm() : 회원가입, 탈퇴
+        // if(game == "가위" || game.toLowerCase() == "scissors")
+        var gameNum; // <-- ?! 가위 (0 : 가위, 1 : 바위)
+        switch(game) {
+            case "가위": gameNum = 1;
+            break;
+            case "바위": gameNum = 2;
+            break;
+            case "보": gameNum = 3;
+            break;
+            default:alert("가위,바위,보 중 하나만 입력하세요!");
+            location.reload();
+        }
+
+        var com = Math.ceil(Math.random() * 3); // 0 < x < 1 : 난수
+        // console.log("컴퓨터의 난수값 : "+com);
+
+        // 이미지를 1~3.png로 잘라내는 방법
+        // 이미지 1개를 1~3 (가위,바위,보) 이미지의 좌표값을 배열로
+        // 만들어서 사용하는 방법
+
+        document.write("<img src=images/math_img_"+gameNum+".jpg alt=\"사용자\" />");
+        document.write(`<img src="images/math_img_${com}.jpg" alt="컴퓨터">`);
+
+        // 사용자 입력값 <---> 컴퓨터 난수값 : 일치여부를 (true, false)
+
+        if(gameNum == com){
+            document.write(`<img src="images/game_1.jpg" alt="맞음">`);
+        } else {
+            document.write(`<img src="images/game_2.jpg" alt="틀림">`);
+        }
     </script>
 </body>
 </html>
