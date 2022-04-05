@@ -79,35 +79,85 @@
         <ul class="alarm-wrap">
             <li>
                 <label for="alarm_hour">시</label>
-                <input type="text" id="alarm_hour" maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                <input type="text" id="alarm_hour" required maxlength="2" placeholder="알람 설정 시간을 입력하세요">
             </li>
             <li>
                 <label for="alarm_min">분</label>
-                <input type="text" id="alarm_min" maxlength="2" placeholder="알람 설정 분을 입력하세요">
+                <input type="text" id="alarm_min" required maxlength="2" placeholder="알람 설정 분을 입력하세요">
+            </li>
+            <li>
+                <label for="alarm_message">분</label>
+                <input type="text" id="alarm_message" placeholder="알람 내용을 간단히 작성하세요 ex>점심약속 출발">
             </li>
             <li>
                 <input type="submit" id="set_alarm" value="설정">
             </li>
         </ul>
     </form>
+    <button id="closePop">창닫기</button>
     <script>
-        var myDate = new Date();
-        var mySi = myDate.getHours();
-        var myBun = myDate.getMinutes();
-        var myCho = myDate.getSeconds();
-
         // 출력대상 탐색
         // document.getElementById("timer_text")
-        var targetTag = document.querySelector("#timer_text");
+        const targetTag = document.querySelector("#timer_text");
         // console.dir(targetTag); ▶ 눌러서 확장!!
-        targetTag.innerHTML = `<strong>${mySi}:${myBun}:${myCho}</strong>`;
+        const intervalID = setInterval(function(){
+            let myDate = new Date();
+            let mySi = myDate.getHours();
+            let myBun = String(myDate.getMinutes()).padStart(2,"0");
+            let myCho = String(myDate.getSeconds()).padStart(2,"0");            
+            targetTag.innerHTML = `<strong>${mySi}:${myBun}:${myCho}</strong>`;
+            return mySi
+        }, 1000)
+        // function timer(){
+        //     targetTag.innerHTML = `<strong>${mySi}:${myBun}:${myCho}</strong>`;
+        // }
         // vs .innerText : HTML포함 사용 vs text만 사용
 
         // 알람을 설정하려면??
+        const alarmForm = document.querySelector("#alarm_form");
+        const submitBTN = alarmForm.querySelector("#set_alarm");
+
+        // js event 전파단계 : capture --> target --> bubble
+        //                  [상위->해당]   [대상]    [해당->상위]
+        // .preventDefault()
+        // .stopPropagitaion()
+
+        let alarmHour = document.querySelector("#alarm_hour")
+        let alarmMin = document.querySelector("#alarm_min")
+        let alarmText = document.querySelector("#alarm_message")
+        alarmForm.addEventListener("submit", function(e){
+            e.preventDefault(); // 이벤트 전파 금지
+            saveAlarm(); // 알람을 localStorage에 저장하기
+            alarmCheck(); // 알람이 설정된 경우, 설정된 알람을 체크
+            clearAlarm(); // 저장한 뒤에는 입력필드를 초기화하기
+        });
+        function alarmCheck(){
+            let schedulesList = []
+            if(localStorage.length) {
+                console.log("등록된 알람이 있습니다");  
+                //showAlarm(); 이건 필요하면 더 만들어요~!
+            }
+        }
+        function saveAlarm(){
+            let schedules = {
+                hours : alarmHour.value, 
+                mins: alarmMin.value, 
+                message : alarmText.value
+            }
+            localStorage.setItem("schedule", JSON.stringify(schedules));
+            
+        }
+        function clearAlarm(){
+            alarmHour.value=alarmMin.value=alarmText.value=""
+        }
         
         // p.118~121 
         // .setTimeout() : 지정시간이 종료되면~
         // .setInterval() : 매 지정 시간마다 (반복)~
+
+        closePop.onclick=function(){
+            window.close();
+        }
     </script>
 </body>
 </html>
