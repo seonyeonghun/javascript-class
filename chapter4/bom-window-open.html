@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; 브라우저 객체(BOM)</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <p>브라우저객체 모델중 최상위 객체 window에 정의된 메소드를 살펴봅시다</p>
+    <h2>window객체 메소드</h2>
+    <ul>
+        <li>.open() vs .close() : URL 페이지를 새창으로 띄웁니다.
+            <p class="warn">단, 사용자가 팝업차단을 해제해주어야 합니다.</p>
+        </li>
+        <li>.setInterval() vs .clearInterval() : 일정한 시간 간격으로 코드 실행하기 vs 해제하기
+            <p class="warn">단, 참조변수는 보통 intervalID 라고 씀.</p>
+        </li>
+    </ul>
+
+    <h2>사용예시</h2>
+    <div class="window">
+        버튼을 눌러, 팝업창을 열어보세요
+        <button id="opener">새창열기(=팝업)</button>
+    </div>
+    <div id="timer"></div>
+        <button id="stopper">멈추기</button>
+    <script>
+        const windowBOX = document.querySelector(".window");
+        const openBTN = windowBOX.querySelector("#opener");
+        // 이벤트 리스너 방식 : 여러개의 이벤트를 부착 .addEventListener()
+        // 이벤트 리스너 방식의 이벤트 제거 : .removeEventListener()
+        // 이벤트 핸들러방식 : 한번에 한개의 이벤트를 부착
+        openBTN.onclick=function(){
+            const popWidth = 300;
+            const popHeight = 400;
+            const leftPos = (screen.availWidth - popWidth) / 2;
+            const topPos = (screen.availHeight - popHeight) / 2;            
+            window.open("./clock.html","clockPop","width="+popWidth+",height="+popHeight+",left="+leftPos+",top="+topPos+",location=no,status=no,toolbars=no")
+        }
+
+        // 이벤트 핸들러 방식의 이벤트 제거
+        // openBTN = null;
+
+        // p.119 예시 3초 간격으로 변수 i값을 1씩 증가시킴
+        let i = 0
+        const timer = document.querySelector("#timer")
+        const intervalID = setInterval(function(){
+            i++;
+            timer.innerHTML = `i : ${i}+<br>`;            
+        }, 3000);
+
+        const stopper = document.querySelector("#stopper");
+        stopper.addEventListener("click", function(){
+            clearInterval(intervalID);    
+        })
+    </script>
+</body>
+</html>

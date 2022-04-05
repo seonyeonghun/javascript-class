@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; screen 객체</title>
+</head>
+<body>
+    <h1>screen 객체</h1>
+    <p>screen 즉, 사용자 모니터 정보를 제공하는 객체</p>
+    <script>
+        const screenDepth = screen.pixelDepth;
+        const screenWide = screen.availWidth;
+        const screenHeight = screen.availHeight;
+        let screenOrient = screen.orientation.type;
+        if(screenOrient == "landscape-primary"){
+            screenOrient = "가로"
+        }
+        alert(`픽셀깊이 : ${screenDepth} \n
+        스크린넓이 : ${screenWide}\n
+        스크린높이 : ${screenHeight}\n
+        스크린방향 : ${screenOrient}`)
+        console.log("표현가능 컬러bit : "+screen.colorDepth)
+    </script>
+</body>
+</html>

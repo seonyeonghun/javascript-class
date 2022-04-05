@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; window 객체</title>
+</head>
+<body>
+    <h1>윈도우 객체</h1>
+    <p>timeout예제. 3초 뒤 팝업창 호출</p>
+
+    <script>
+        // p.121
+        // .setTimeout() vs .clearTimeout()
+        setTimeout(opener, 3000);
+
+        function opener(){
+            window.open("clock.html", "clockWin", "width=400,height=500,toolbars=no,scrollbars=no,menubar=no")
+        }
+
+    </script>
+</body>
+</html>

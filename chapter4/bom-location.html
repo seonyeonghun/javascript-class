@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; location</title>
+</head>
+<body>
+    <h1>location 객체</h1>
+    <p>브라우저에 대한 정보를 관리하는 객체</p>
+    <form id="form">
+        <label for="urlField">이동할 주소</label>
+        <input type="text" id="urlField">
+        <input type="submit" value="입력">
+    </form>
+    <script>
+        // Q. 입력 필드에 입력한 주소를 location.href에 넣어보세요
+        // 그냥 입력 누르면?? 오류! 왜~ 주소없으니깐!!
+
+        const _form = document.querySelector("#form");
+        const _url = document.querySelector("#urlField");
+        _url.focus()
+        _form.addEventListener("submit", handleForm);
+        
+        function handleForm(e){
+            e.preventDefault();
+            formValidation();
+            const isNewTab = confirm("새창으로 띄울까요?");
+            if(isNewTab){
+                window.open(_url.value,"");
+            } else {
+                location.href = _url.value;
+            }
+        }
+        function formValidation(){
+            if(_url.value == ""){
+                alert("이동할 사이트 주소를 입력하세요!")
+                return false;
+            }
+            if(_url.value.indexOf("http://")) {
+                alert("http://를 포함해서 작성하세요")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
